@@ -179,6 +179,10 @@ window.KBF_CONFIG = {
       a: "Caribbean sounds from Spanish-speaking, French-speaking, English-speaking and Creole-speaking regions. The current concept includes around four to five DJs, and styles could include dancehall, soca, reggae, zouk, kompa, bouyon, salsa, bachata, merengue, reggaetón and more. The programme has not yet been confirmed.",
     },
     {
+      q: "Can I wear a carnival outfit and bring my flag?",
+      a: "Yes, please! We encourage carnival outfits, island colours and cool looks – and every Caribbean flag is welcome. Keep it family-friendly and wear comfortable shoes. Share your look with <strong>#KBF27</strong>. Any site rules (for example on flag poles) will be shared closer to the festival.",
+    },
+    {
       q: "Will there be food and drinks?",
       a: "Yes – an outdoor food area with independent vendors and a festival bar are planned, including non-alcoholic options. The vendor selection and drinks offering will be announced closer to the festival.",
     },
