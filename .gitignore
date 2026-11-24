@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Local tooling
+node_modules/
+.claude/settings.local.json
+
+# Never commit internal project documents to this public website repository
+*.docx
+*.pdf
+*.xlsx
+*.zip

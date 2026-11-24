@@ -1,0 +1,18 @@
+# Cloudflare Pages response headers
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  # PRE-LAUNCH: keeps search engines from indexing the site during development.
+  # Delete this line at public launch (see README → "Going public").
+  X-Robots-Tag: noindex, nofollow
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+/assets/*
+  Cache-Control: public, max-age=86400
+
+# Never index the preview deployments (*.pages.dev), even after launch
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

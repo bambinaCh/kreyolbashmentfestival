@@ -1,0 +1,7 @@
+# PRE-LAUNCH: blocks all crawlers during development.
+# At public launch replace with:
+#   User-agent: *
+#   Allow: /
+#   Sitemap: https://www.your-domain.ch/sitemap.xml
+User-agent: *
+Disallow: /
