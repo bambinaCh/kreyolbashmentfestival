@@ -83,9 +83,19 @@
         el.setAttribute("role", "link");
         el.setAttribute("aria-disabled", "true");
         el.classList.add("is-soon");
-        el.innerHTML = `<span>${esc(label)}</span><span class="btn__soon">${esc(t("forms.soon", "Applications coming soon"))}</span>`;
+        const soon = el.dataset.soonLabel || t("forms.soon", "Applications coming soon");
+        el.innerHTML = `<span>${esc(label)}</span><span class="btn__soon">${esc(soon)}</span>`;
       }
     });
+
+    // Email links: open the visitor's mail app (address only printed if allowed in config)
+    const c = CONFIG.contact || {};
+    $$("[data-mail]").forEach((el) => {
+      if (!c.enquiryEmail) return;
+      el.href = `mailto:${c.enquiryEmail}?subject=${encodeURIComponent("[#KBF27] Enquiry")}`;
+      if (c.showEmailAddress && !el.classList.contains("icon-link")) el.textContent = c.enquiryEmail;
+    });
+    if (!c.enquiryEmail) $$("[data-mail-block]").forEach((el) => (el.hidden = true));
 
     $$("[data-link]").forEach((el) => {
       const url = linkFor(el.dataset.link);
@@ -312,6 +322,25 @@
       .join("");
   }
 
+  function renderGenres() {
+    const grid = $("#genre-grid");
+    const ticker = $("#sound-ticker");
+    const genres = CONFIG.genres || [];
+    if (grid) {
+      grid.innerHTML = genres
+        .map((g, i) => `<article class="genre reveal" style="--accent: ${ACCENTS[i % 4]}; --tilt: ${i % 2 ? 1.2 : -1.2}deg">
+            <h3 class="genre__name">${esc(g.name)}</h3>
+            <p class="genre__origin">${esc(g.origin)}</p>
+            <p class="genre__vibe">${esc(g.vibe)}</p>
+          </article>`)
+        .join("");
+    }
+    if (ticker) {
+      const row = genres.filter((g) => !g.name.startsWith("&")).map((g) => `<span>${esc(g.name)}</span><span class="ticker__dot"></span>`).join("");
+      ticker.innerHTML = row + row; // duplicated for a seamless loop
+    }
+  }
+
   function renderProgramme() {
     const body = $("#programme-body");
     if (!body) return;
@@ -432,6 +461,17 @@
     if (footer) {
       footer.innerHTML = (phoneLink ? `<li>${phoneLink}</li>` : "") + `<li>${esc(c.location)}</li>`;
     }
+
+    const icons = $("#contact-icons");
+    if (icons) {
+      const item = (href, icon, label, external) =>
+        `<li><a class="icon-link" href="${esc(href)}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ""} aria-label="${esc(label)}${external ? " (opens in a new tab)" : ""}">
+          <svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg></a></li>`;
+      icons.innerHTML =
+        (instagram ? item(instagram, "i-instagram", `Instagram ${c.instagramLabel}`, true) : "") +
+        (c.enquiryEmail ? item(`mailto:${c.enquiryEmail}?subject=${encodeURIComponent("[#KBF27] Enquiry")}`, "i-mail", "Send us an email") : "") +
+        (c.showPhone && c.phone ? item(`tel:${c.phone.replace(/\s+/g, "")}`, "i-phone", `Call ${c.phone}`) : "");
+    }
   }
 
   /* -----------------------------------------------------------------------
@@ -544,6 +584,7 @@
      ----------------------------------------------------------------------- */
   function init() {
     applyBindings();
+    renderGenres();
     renderLineup();
     renderProgramme();
     renderVendors("vendors-food", CONFIG.vendors?.food, "food");

@@ -31,6 +31,9 @@ window.KBF_LINKS = {
   /* Optional: an external newsletter sign-up page (e.g. a Google Form). */
   NEWSLETTER_FORM_URL: "",
   INSTAGRAM_URL: "https://www.instagram.com/kreyol_bashment/",
+  /* Music: a public Spotify / SoundCloud / YouTube playlist and a teaser video link. */
+  PLAYLIST_URL: "",
+  TEASER_VIDEO_URL: "",
   GOOGLE_MAPS_URL:
     "https://www.google.com/maps/search/?api=1&query=GZ%20Wollishofen%2C%20Bachstrasse%207%2C%208038%20Z%C3%BCrich",
   TIMETABLE_URL: "https://www.sbb.ch/en",
@@ -76,11 +79,31 @@ window.KBF_CONFIG = {
     project: "Kreyol Bashment Festival – Caribbean Fever",
     location: "Zürich, Switzerland",
     enquiryEmail: "kendyfelizmatos@gmail.com",
+    /* false = email icons say "Write to us" without printing the address */
+    showEmailAddress: false,
     phone: "+41 79 456 74 00",
     instagramLabel: "@kreyol_bashment",
     /* Profile URL: set INSTAGRAM_URL in KBF_LINKS above. */
   },
 
+
+  /* -----------------------------------------------------------------------
+     THE SOUND – genre tiles. Illustrative, not a confirmed programme.
+     ----------------------------------------------------------------------- */
+  genres: [
+    { name: "Soca", origin: "Trinidad & Tobago", vibe: "Carnival energy, non-stop jump and wave." },
+    { name: "Bouyon", origin: "Dominica", vibe: "Fast, raw and made for the dance floor." },
+    { name: "Kompa", origin: "Haiti", vibe: "Smooth, rolling rhythm for dancing close." },
+    { name: "Zouk", origin: "Guadeloupe & Martinique", vibe: "The heartbeat of the French Antilles." },
+    { name: "Dancehall", origin: "Jamaica", vibe: "Sound-system culture and big riddims." },
+    { name: "Reggae", origin: "Jamaica", vibe: "Roots, rhythm and a message." },
+    { name: "Calypso", origin: "Trinidad & Tobago", vibe: "Storytelling with a smile." },
+    { name: "Salsa", origin: "Cuba & Puerto Rico", vibe: "Brass, clave and quick feet." },
+    { name: "Bachata", origin: "Dominican Republic", vibe: "Guitar-led romance with a sway." },
+    { name: "Merengue", origin: "Dominican Republic", vibe: "Up-tempo, joyful and impossible to resist." },
+    { name: "Reggaetón", origin: "Puerto Rico", vibe: "Dembow beats that move every crowd." },
+    { name: "& more", origin: "All the islands", vibe: "Gwoka, steelpan, chutney soca – and surprises." },
+  ],
 
   /* -----------------------------------------------------------------------
      LINE-UP – add as many entries as needed; the grid grows automatically.

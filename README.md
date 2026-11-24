@@ -81,6 +81,7 @@ Open **`assets/js/config.js`**. Each block is commented:
 | `festival` | Name, date, start and end times, countdown target, time zone, admission |
 | `venue` | Venue name and address |
 | `contact` | Get in touch list (project, location, telephone, Instagram). `showPhone: false` hides the number. `enquiryEmail` is not displayed; it is only the recipient used by the enquiry form |
+| `genres` | Genre tiles and ticker in "The Sound" section (name, origin, one-line vibe) |
 | `lineupAnnounced` / `artists` | Line-up cards. Add or remove entries; the grid adapts automatically |
 | `programme` | Running order. Empty means the "Programme coming soon" state is shown |
 | `vendors.food` / `vendors.market` | Vendor cards |
@@ -129,6 +130,8 @@ window.KBF_LINKS = {
   ARTIST_FORM_URL: "",
   SPONSORSHIP_FORM_URL: "",
   NEWSLETTER_FORM_URL: "",   // optional
+  PLAYLIST_URL: "",          // Spotify / SoundCloud / YouTube playlist
+  TEASER_VIDEO_URL: "",      // teaser video (e.g. YouTube or Instagram reel)
   INSTAGRAM_URL: "",
   GOOGLE_MAPS_URL: "https://www.google.com/maps/search/?api=1&query=…",
   TIMETABLE_URL: "https://www.sbb.ch/en",
@@ -160,6 +163,8 @@ window.KBF_LINKS = {
 | `MARKET_VENDOR_FORM_URL` | Vendor applications block (Food & Market) and vendor card in Get Involved |
 | `ARTIST_FORM_URL` | Artist card in Get Involved |
 | `SPONSORSHIP_FORM_URL` | Partner card in Get Involved and the partnership banner in Partners |
+| `PLAYLIST_URL` | "Listen to the playlist" in The Sound (shows "Playlist coming soon" until set) |
+| `TEASER_VIDEO_URL` | "Watch the teaser" in The Sound (shows "Teaser coming soon" until set) |
 | `NEWSLETTER_FORM_URL` | Optional. If set, submitting the newsletter box opens this form in a new tab |
 
 **Recommended Google Forms settings**
@@ -184,6 +189,7 @@ To add another form button anywhere in `index.html`:
 - **Instagram:** `INSTAGRAM_URL` in `KBF_LINKS` is set to `https://www.instagram.com/kreyol_bashment/`.
   If you empty it, the handle is shown as plain text with "link coming soon".
 - The display name comes from `contact.instagramLabel`.
+- **Email icons** (Stay Connected, Contact, footer) open the visitor's mail app with `contact.enquiryEmail`. Set `showEmailAddress: true` to also print the address on the page.
 - For more channels, add a key to `KBF_LINKS` and use
   `<a href="#" data-link="YOUR_KEY" data-soon="Label">Label</a>` in the HTML.
 

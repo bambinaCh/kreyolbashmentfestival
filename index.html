@@ -99,6 +99,9 @@
     <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20c0-9.5 5.5-15 15-15 0 9.5-5.5 15-14 15M5 20l7.5-7.5"/></symbol>
     <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8h.01"/></symbol>
     <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 21v-6M7 15h10l-5-12z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -388,6 +391,48 @@
               <p>A planned market or gift-shop area with Caribbean-inspired products, merchandise and souvenirs.</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4b. THE SOUND – Caribbean genres (rendered from KBF_CONFIG.genres)
+         ===================================================================== -->
+    <section class="section theme-pink sound" id="sound" aria-labelledby="sound-title">
+      <div class="sound__ticker" aria-hidden="true">
+        <div class="sound__ticker-track" id="sound-ticker"></div>
+      </div>
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow reveal">The sound of KBF</p>
+            <h2 class="section-title reveal" id="sound-title">Feel the rhythm.</h2>
+          </div>
+          <p class="section-intro reveal">From soca and bouyon to kompa, zouk, dancehall and bachata – sounds from every corner of the Caribbean, side by side. Different roots. Shared rhythms.</p>
+        </header>
+
+        <div class="sound__grid">
+          <aside class="sound-player reveal" aria-labelledby="player-title">
+            <div class="eq" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="sound-player__label"><svg class="icon" aria-hidden="true"><use href="#i-headphones"/></svg>KBF Sound</p>
+            <h3 class="sound-player__title" id="player-title">Get in the mood for #KBF27</h3>
+            <p>Our official festival playlist and teaser are on their way. Until then: turn it up, wherever you are.</p>
+            <a class="btn btn--primary" href="#sound" data-form="PLAYLIST_URL" data-soon-label="Playlist coming soon"><svg class="icon" aria-hidden="true"><use href="#i-headphones"/></svg>Listen to the playlist</a>
+
+            <!-- TEASER VIDEO: replace the placeholder with a video thumbnail; the button opens TEASER_VIDEO_URL -->
+            <div class="sound-player__video">
+              <div class="media media--rounded" style="--ratio: 16 / 9" data-ph="Teaser video thumbnail" data-size="1920 × 1080 px · 16:9" role="img" aria-label="Image placeholder: teaser video thumbnail"></div>
+              <span class="sound-player__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
+            </div>
+            <a class="btn btn--ghost btn--sm" href="#sound" data-form="TEASER_VIDEO_URL" data-soon-label="Teaser coming soon">Watch the teaser</a>
+          </aside>
+
+          <div>
+            <div class="genre-grid" id="genre-grid"></div>
+            <p class="fineprint sound__note reveal">A taste of the Caribbean's many sounds – illustrative only, not a confirmed programme. The line-up will be announced.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -885,14 +930,20 @@
 
           <div class="socials reveal">
             <div class="social">
-              <span class="social__icon" aria-hidden="true">IG</span>
+              <span class="social__icon" aria-hidden="true"><svg class="icon"><use href="#i-instagram"/></svg></span>
               <div>
                 <p class="social__name">Instagram</p>
                 <a class="social__handle" href="#stay-connected" data-link="INSTAGRAM_URL" data-soon="@kreyol_bashment">@kreyol_bashment</a>
                 <p class="social__note" data-link-note="INSTAGRAM_URL">Profile link coming soon</p>
               </div>
             </div>
-            <div class="social social--ph" aria-hidden="true"><span class="social__icon">+</span><p class="social__note">More channels to be announced</p></div>
+            <div class="social" data-mail-block>
+              <span class="social__icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
+              <div>
+                <p class="social__name">Email</p>
+                <a class="social__handle" href="#contact" data-mail>Write to us</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -933,6 +984,7 @@
             <div><dt>Project</dt><dd>Kreyol Bashment Festival – Caribbean Fever</dd></div>
             <div><dt>Location</dt><dd>Zürich, Switzerland</dd></div>
           </dl>
+          <ul class="icon-links icon-links--lg reveal" id="contact-icons" aria-label="Contact channels"></ul>
         </div>
 
         <div class="contact__form-wrap reveal">
@@ -1007,6 +1059,7 @@
         <ul class="site-footer__links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#sound">The Sound</a></li>
           <li><a href="#lineup">Line-up</a></li>
           <li><a href="#food">Food &amp; Market</a></li>
           <li><a href="#visitor-info">Visitor Info</a></li>
@@ -1031,9 +1084,11 @@
           <li>Zürich, Switzerland</li>
         </ul>
         <h2 class="site-footer__heading">Social</h2>
-        <ul class="site-footer__links">
-          <li>Instagram: <a href="#stay-connected" data-link="INSTAGRAM_URL" data-soon="@kreyol_bashment">@kreyol_bashment</a> <small data-link-note="INSTAGRAM_URL">(link coming soon)</small></li>
+        <ul class="icon-links">
+          <li><a class="icon-link" href="#stay-connected" data-link="INSTAGRAM_URL" aria-label="Instagram @kreyol_bashment"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li data-mail-block><a class="icon-link" href="#contact" data-mail aria-label="Email Kreyol Bashment"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
         </ul>
+        <p class="site-footer__handle">@kreyol_bashment · <span class="hashtag">#KBF27</span></p>
       </div>
     </div>
 
