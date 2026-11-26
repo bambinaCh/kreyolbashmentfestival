@@ -547,7 +547,7 @@ address { font-style: normal; }
   display: flex; flex-direction: column;
 }
 .hero__line { display: block; animation: rise var(--t-slow) var(--ease) both; }
-.hero__line--1 { color: var(--c-cream); }
+.hero__line--1 { color: var(--c-yellow); }
 .hero__line--2 { color: var(--c-yellow); animation-delay: 90ms; }
 .hero__line--festival { color: var(--c-cream); animation-delay: 140ms; }
 .hero__initial {
@@ -1423,3 +1423,14 @@ a.social__handle[href^="mailto"] { text-decoration: underline; text-underline-of
   -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
 }
 .media__credit:hover, .media__credit:focus-visible { background: var(--c-ink); text-decoration: underline; }
+
+/* Logo image (header, footer, sub-pages) – transparent, with a soft shadow for contrast */
+.site-logo {
+  display: block; height: 50px; width: auto;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.55)) drop-shadow(0 0 6px rgba(0,0,0,.35));
+  transition: transform var(--t-fast) var(--ease);
+}
+.site-header__logo:hover .site-logo { transform: rotate(-2deg) scale(1.03); }
+.site-header.is-scrolled .site-logo { height: 44px; }
+.site-logo--footer { height: 76px; }
+@media (max-width: 480px) { .site-logo { height: 42px; } }

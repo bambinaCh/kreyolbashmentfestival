@@ -20,3 +20,18 @@ assets/img/gallery/carnival.avif
 assets/img/gallery/carnival1.jpg
 assets/img/gallery/carnival2.jpg
 assets/img/gallery/fete[0-9].jpg
+assets/img/vendors/become-dj.jpg
+assets/img/vendors/festival-stand.jpg
+assets/img/vendors/food-stand.jpg
+assets/img/vendors/rum-punch.jpg
+assets/img/vendors/volunteer.jpg
+
+# Videos – too large for the repository (≈180 MB); host them on Instagram/YouTube or add one compressed clip on purpose
+assets/vid/*.mp4
+assets/img/gallery/*.mp4
+
+# Unused originals – the site uses the optimised versions (*-web.jpg, kbf-logo-web.png)
+assets/img/gallery/crop-over1.avif
+assets/img/gallery/511456523_17881043601341175_4677509254459621423_n.jpg
+assets/img/brand/KBF-logo.png
+assets/img/brand/KBF-logo-svg.png

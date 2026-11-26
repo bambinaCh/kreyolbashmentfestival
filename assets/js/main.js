@@ -315,7 +315,7 @@
           ${mediaMarkup({ image: a.image, alt: a.imageAlt || a.name, position: a.imagePosition, label: `Artist portrait ${n}`, size: "1200 × 1500 px · 4:5", ratio: "4 / 5" })}
           <div class="artist-card__body">
             <h3 class="artist-card__name ${a.name ? "" : "is-tba"}">${esc(a.name || `Artist ${n} – TBA`)}</h3>
-            <p class="artist-card__meta"><span>${esc(a.genre || "Genre TBA")}</span><span>${esc(a.origin || "Background TBA")}</span></p>
+            <p class="artist-card__meta"><span>${esc(a.genre || "Genre TBA")}</span>${a.origin || !a.announced ? `<span>${esc(a.origin || "Background TBA")}</span>` : ""}</p>
             <p class="artist-card__bio">${esc(a.bio || "Biography coming soon.")}</p>
           </div>
         </article>`;
@@ -370,7 +370,7 @@
     const isFood = kind === "food";
     grid.innerHTML = (items || [])
       .map((v, i) => `<article class="vendor-card reveal">
-          ${mediaMarkup({ image: v.image, alt: v.imageAlt || v.name, label: isFood ? `Food vendor ${i + 1}` : `Market vendor ${i + 1}`, size: "1200 × 800 px · 3:2", ratio: "3 / 2" })}
+          ${mediaMarkup({ image: v.image, alt: v.imageAlt || v.name, position: v.imagePosition, label: v.imageLabel || (isFood ? `Food vendor ${i + 1}` : `Market vendor ${i + 1}`), size: "1200 × 800 px · 3:2", ratio: "3 / 2" })}
           <div class="vendor-card__body">
             <p class="vendor-card__type">${esc(v.specialty || (isFood ? "Food vendor" : "Market vendor"))}</p>
             <h4 class="vendor-card__name">${esc(v.name || "To be announced")}</h4>

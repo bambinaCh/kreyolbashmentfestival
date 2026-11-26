@@ -109,20 +109,30 @@ window.KBF_CONFIG = {
      LINE-UP – add as many entries as needed; the grid grows automatically.
      ----------------------------------------------------------------------- */
   lineupAnnounced: false,
-  /* Per artist: set announced: true to drop the "Coming soon" badge on that card.
+  /* Per artist: set announced: true to drop the "Coming soon" badge on that card
+     (an announced artist with an empty origin shows no background line).
      imagePosition moves the crop (e.g. "50% 15%" keeps a face near the top). */
   artists: [
     {
       name: "DJ Lagwada",
-      genre: "",
+      genre: "DJ",
       origin: "",
-      bio: "",
+      bio: "Shatta · Dancehall · Reggae · Afrobeats",
       image: "assets/img/artists/lagwada.jpg",
       imageAlt: "Portrait of DJ Lagwada with red curly hair in a denim jacket",
       imagePosition: "50% 15%",
       announced: true,
     },
-    { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
+    {
+      name: "Haitian FX",
+      genre: "DJ",
+      origin: "",
+      bio: "Shatta · Dancehall · Reggae",
+      image: "assets/img/artists/haitianfx.jpg",
+      imageAlt: "Portrait of DJ Haitian FX with dreadlocks, sunglasses and a red cap",
+      imagePosition: "50% 25%",
+      announced: true,
+    },
     { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
     { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
     { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
@@ -136,14 +146,42 @@ window.KBF_CONFIG = {
      VENDORS – selection not final. Placeholders only.
      ----------------------------------------------------------------------- */
   vendors: {
+    /* name = the cuisine shown as the card title; specialty = small line above it.
+       imageLabel = placeholder text until a photo is added via image. */
     food: [
-      { name: "", specialty: "", description: "", image: "", imageAlt: "" },
-      { name: "", specialty: "", description: "", image: "", imageAlt: "" },
-      { name: "", specialty: "", description: "", image: "", imageAlt: "" },
+      {
+        name: "Haitian Kreyol cuisine",
+        specialty: "Food vendor – Haiti",
+        description: "Bold, slow-cooked and full of epis – the herb-and-pepper base of Haitian cooking. Think griot with pikliz, diri ak djon djon, bannann peze and akra. Dishes are examples; the final menu will be announced.",
+        image: "",
+        imageAlt: "",
+        imageLabel: "Haitian dish",
+      },
+      {
+        name: "Dominican cuisine",
+        specialty: "Food vendor – Dominican Republic",
+        description: "Hearty comfort food with Taíno, Spanish and African roots. Think la bandera (rice, beans and stewed meat), mangú with fried salami, tostones and sancocho. Dishes are examples; the final menu will be announced.",
+        image: "",
+        imageAlt: "",
+        imageLabel: "Dominican dish",
+      },
     ],
     market: [
-      { name: "", specialty: "", description: "", image: "", imageAlt: "" },
-      { name: "", specialty: "", description: "", image: "", imageAlt: "" },
+      {
+        name: "Drinks Bar",
+        specialty: "Stand",
+        description: "Caribbean rum punch and mojitos – plus refreshing non-alcoholic options.",
+        image: "assets/img/vendors/rum-punch-web.jpg",
+        imageAlt: "Bowl of Caribbean rum punch with orange and lime slices",
+        imagePosition: "50% 55%",
+      },
+      {
+        name: "Gift shop",
+        specialty: "Stand",
+        description: "Gifts, souvenirs and merchandise that represent Caribbean culture – something to take home to celebrate the islands and remember the day.",
+        image: "assets/img/vendors/festival-stand-web.jpg",
+        imageAlt: "Colourful market stand with a red tent at an outdoor festival",
+      },
     ],
   },
 
