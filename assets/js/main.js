@@ -40,9 +40,10 @@
   const ACCENTS = ["var(--c-pink)", "var(--c-yellow)", "var(--c-teal)", "var(--c-orange)", "var(--c-green-light)"];
 
   /** Markup for an image slot: a real <img> if a source is given, otherwise a placeholder. */
-  const mediaMarkup = ({ image, alt, label, size, ratio, extraClass = "" }) => {
+  const mediaMarkup = ({ image, alt, label, size, ratio, position, extraClass = "" }) => {
     if (image) {
-      return `<div class="media ${extraClass}" style="--ratio: ${ratio}"><img src="${esc(image)}" alt="${esc(alt)}" loading="lazy"></div>`;
+      const pos = position ? ` style="object-position: ${esc(position)}"` : "";
+      return `<div class="media ${extraClass}" style="--ratio: ${ratio}"><img src="${esc(image)}" alt="${esc(alt)}" loading="lazy"${pos}></div>`;
     }
     return `<div class="media ${extraClass}" style="--ratio: ${ratio}" data-ph="${esc(label)}" data-size="${esc(size)}" role="img" aria-label="Image placeholder: ${esc(label)}"></div>`;
   };
@@ -310,8 +311,8 @@
         const accent = ACCENTS[i % ACCENTS.length];
         const n = String(i + 1).padStart(2, "0");
         return `<article class="artist-card reveal" style="--accent: ${accent}">
-          ${CONFIG.lineupAnnounced ? "" : '<span class="tag artist-card__badge">Coming soon</span>'}
-          ${mediaMarkup({ image: a.image, alt: a.imageAlt || a.name, label: `Artist portrait ${n}`, size: "1200 × 1500 px · 4:5", ratio: "4 / 5" })}
+          ${CONFIG.lineupAnnounced || a.announced ? "" : '<span class="tag artist-card__badge">Coming soon</span>'}
+          ${mediaMarkup({ image: a.image, alt: a.imageAlt || a.name, position: a.imagePosition, label: `Artist portrait ${n}`, size: "1200 × 1500 px · 4:5", ratio: "4 / 5" })}
           <div class="artist-card__body">
             <h3 class="artist-card__name ${a.name ? "" : "is-tba"}">${esc(a.name || `Artist ${n} – TBA`)}</h3>
             <p class="artist-card__meta"><span>${esc(a.genre || "Genre TBA")}</span><span>${esc(a.origin || "Background TBA")}</span></p>

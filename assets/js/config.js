@@ -109,8 +109,19 @@ window.KBF_CONFIG = {
      LINE-UP – add as many entries as needed; the grid grows automatically.
      ----------------------------------------------------------------------- */
   lineupAnnounced: false,
+  /* Per artist: set announced: true to drop the "Coming soon" badge on that card.
+     imagePosition moves the crop (e.g. "50% 15%" keeps a face near the top). */
   artists: [
-    { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
+    {
+      name: "Lagwada",
+      genre: "",
+      origin: "",
+      bio: "",
+      image: "assets/img/artists/lagwada.jpg",
+      imageAlt: "Portrait of Lagwada with red curly hair in a denim jacket",
+      imagePosition: "50% 15%",
+      announced: true,
+    },
     { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
     { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
     { name: "", genre: "", origin: "", bio: "", image: "", imageAlt: "" },
