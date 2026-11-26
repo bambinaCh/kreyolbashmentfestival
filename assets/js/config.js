@@ -113,12 +113,12 @@ window.KBF_CONFIG = {
      imagePosition moves the crop (e.g. "50% 15%" keeps a face near the top). */
   artists: [
     {
-      name: "Lagwada",
+      name: "DJ Lagwada",
       genre: "",
       origin: "",
       bio: "",
       image: "assets/img/artists/lagwada.jpg",
-      imageAlt: "Portrait of Lagwada with red curly hair in a denim jacket",
+      imageAlt: "Portrait of DJ Lagwada with red curly hair in a denim jacket",
       imagePosition: "50% 15%",
       announced: true,
     },

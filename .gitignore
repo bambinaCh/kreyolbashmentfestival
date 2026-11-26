@@ -14,3 +14,9 @@ node_modules/
 *.pdf
 *.xlsx
 *.zip
+
+# Large original photos – only the optimised *-web.jpg versions are published
+assets/img/gallery/carnival.avif
+assets/img/gallery/carnival1.jpg
+assets/img/gallery/carnival2.jpg
+assets/img/gallery/fete[0-9].jpg
